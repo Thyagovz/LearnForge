@@ -1,6 +1,6 @@
 using LearnForge.NotificationContext;
 
-namespace LearnForge.ContentContext;
+namespace LearnForge.SharedContext;
 
 public abstract class Base : Notifiable
 {

@@ -1,0 +1,10 @@
+using LearnForge.SubscriptionContext;
+
+namespace LearnForge.SharedContext;
+
+public class Student : Base
+{
+    public required string Name { get; set; }
+    public required string Email { get; set; }
+    public required User user { get; set; }
+}

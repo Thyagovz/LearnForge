@@ -1,3 +1,5 @@
+using LearnForge.SharedContext;
+
 namespace LearnForge.ContentContext;
 
 public abstract class Content : Base

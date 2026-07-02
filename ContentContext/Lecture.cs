@@ -1,4 +1,5 @@
 using LearnForge.ContentContext.Enums;
+using LearnForge.SharedContext;
 
 namespace LearnForge.ContentContext;
 public class Lecture : Base
