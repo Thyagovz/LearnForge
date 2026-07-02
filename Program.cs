@@ -1,5 +1,6 @@
 ﻿using LearnForge.ContentContext;
 using LearnForge.NotificationContext;
+using LearnForge.SubscriptionContext;
 
 namespace LearnForge;
 
@@ -44,6 +45,10 @@ class Program
                     Console.WriteLine($"{notification.Property} - {notification.Message}");
                 }
             }
+
+            var payPalSubscription = new PayPalSubscription();
+            var student = new Student();
+            student.Subscriptions.Add(payPalSubscription);
         }
     }
 }
