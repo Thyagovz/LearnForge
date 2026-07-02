@@ -1,4 +1,5 @@
 namespace LearnForge.ContentContext;
+
 public class Module
 {
     public Module()
