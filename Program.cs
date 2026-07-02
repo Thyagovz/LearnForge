@@ -1,5 +1,6 @@
 ﻿using LearnForge.ContentContext;
 using LearnForge.NotificationContext;
+using LearnForge.SharedContext;
 using LearnForge.SubscriptionContext;
 
 namespace LearnForge;
@@ -46,9 +47,39 @@ class Program
                 }
             }
 
-            var payPalSubscription = new PayPalSubscription();
-            var student = new Student();
+            var plan = new Plan
+            {
+                Title = "Plano Premium",
+                Price = 99.90m
+            };
+
+            var payPalSubscription = new PayPalSubscription
+            {
+                Plan = plan
+            };
+
+            var user = new User
+            {
+                Username = "thyago",
+                Password = "123456"
+            };
+
+            var student = new Student
+            {
+                Name = "Thyago",
+                Email = "thyago@email.com",
+                User = user
+            };
+
             student.Subscriptions.Add(payPalSubscription);
+
+            Console.WriteLine();
+            Console.WriteLine("=== STUDENT ===");
+            Console.WriteLine(student.Name);
+            Console.WriteLine(student.Email);
+            Console.WriteLine(student.User.Username);
+            Console.WriteLine($"Premium: {student.IsPremium}");
+            Console.WriteLine($"Assinaturas: {student.Subscriptions.Count}");
         }
     }
 }
