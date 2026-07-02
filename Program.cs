@@ -39,7 +39,7 @@ class Program
         foreach (var career in careers)
         {
             Console.WriteLine(career.Title);
-            foreach (var item in career.Items.OrderBy(x=> x.Order))
+            foreach (var item in career.Items.OrderBy(x => x.Order))
             {
                 Console.WriteLine($"{item.Order} - {item.Title}");
                 Console.WriteLine(item.Course?.Title);
