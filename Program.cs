@@ -10,8 +10,10 @@ class Program
         course.Level = ContentContext.Enums.EContentLevel.Beginner;
         foreach (var item in course.Modules)
         {
-            
+
         }
-        
+        var Career = new Career();
+        Career.Items.Add(new CareerItem());
+        Console.WriteLine(Career.TotalCourses);
     }
 }
