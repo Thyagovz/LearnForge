@@ -1,12 +1,13 @@
+using LearnForge.NotificationContext;
+
 namespace LearnForge.ContentContext;
 
 public class CareerItem : Base
 {
-    public IList<String>? Notifications { get; set; }
     public CareerItem(int order, string? title, string description, Course? course)
     {
         if (course == null)
-            throw new Exception("O curso não pode ser nulo");
+            AddNotification(new Notification("Course", "Curso inválido"));
 
         Order = order;
         Title = title;

@@ -1,4 +1,5 @@
 ﻿using LearnForge.ContentContext;
+using LearnForge.NotificationContext;
 
 namespace LearnForge;
 
@@ -10,13 +11,6 @@ class Program
         articles.Add(new Article("Artigo sobre OOP", "orientacao-objetos"));
         articles.Add(new Article("Artigo sobre C#", "csharp"));
         articles.Add(new Article("Artigo sobre .NET", "dotnet"));
-
-        foreach (var article in articles)
-        {
-            Console.WriteLine(article.Id);
-            Console.WriteLine(article.Title);
-            Console.WriteLine(article.Url);
-        }
 
         var courses = new List<Course>();
         var courseOOP = new Course("Fundamentos OOP", "fundamentos-oop");
@@ -44,6 +38,11 @@ class Program
                 Console.WriteLine($"{item.Order} - {item.Title}");
                 Console.WriteLine(item.Course?.Title);
                 Console.WriteLine(item.Course?.Level);
+
+                foreach (var notification in item.Notifications)
+                {
+                    Console.WriteLine($"{notification.Property} - {notification.Message}");
+                }
             }
         }
     }
