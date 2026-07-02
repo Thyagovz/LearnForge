@@ -1,8 +1,8 @@
 namespace LearnForge.ContentContext;
 
-public class CareerItem
+public class CareerItem : Base
 {
-    public IList<String> Notifications { get; set; }
+    public IList<String>? Notifications { get; set; }
     public CareerItem(int order, string? title, string description, Course? course)
     {
         if (course == null)
